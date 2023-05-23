@@ -1,7 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
       <h1 className="text-5xl text-amber-800 font-bold underline">
