@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import Skill from "./partials/Skill";
 import OtherSkills from "./partials/OtherSkills";
-import {LanguageContext} from "../Home";
+import {LanguageContext} from "../../context/languageContext";
 import {skills} from "./data/SkillData";
 import {otherSkills} from "./data/OtherSkillsData";
 function Skills() {

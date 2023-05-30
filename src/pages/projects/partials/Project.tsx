@@ -1,13 +1,15 @@
 import React, {useContext} from "react";
 import Anime from 'react-anime';
-import {IProjectData} from "../interfaces/projectDataInterface";
 import strings from "../../../localization/languages";
-import {LanguageContext} from "../../Home";
+import {LanguageContext} from "../../../context/languageContext";
+import CustomButton from "../../../components/CustomButton";
+import {ProjectProps} from "../interfaces/ProjectInterfaces";
 
-type Languages = "en" | "de";
-
-const Project: React.FC<{ projectData: IProjectData }> = ({projectData}) => {
-    const Language = useContext(LanguageContext) as Languages;
+const Project: React.FC<ProjectProps> = ({projectData , setDisplayedProject}) => {
+    const {language} = useContext(LanguageContext);
+    const handleDisplayProject = () => {
+        setDisplayedProject(projectData.pathname);
+    };
     return (
         <div className="w-4/5 rounded-xl shadow-md text-white">
             <Anime opacity={[0, 1]} delay={(e: number, i: number) => i * 500} easing={'easeInQuad'}>
@@ -17,7 +19,8 @@ const Project: React.FC<{ projectData: IProjectData }> = ({projectData}) => {
                 <div className="p-5">
                     <h5 className="mb-2 text-lg md:text-2xl">{projectData.projectName}</h5>
                     <h6 className="mb-3 text-sm md:text-lg">{strings.projects.projectDescription}:</h6>
-                    <p>{projectData[Language].projectSummary}</p>
+                    <p>{projectData[language].projectSummary}</p>
+                    <CustomButton onClick={handleDisplayProject} label={strings.projects.seeMore}/>
                 </div>
             </Anime>
         </div>
