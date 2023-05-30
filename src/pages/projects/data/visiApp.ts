@@ -1,22 +1,16 @@
-import {IProjectData} from "../interfaces/projectDataInterface";
+import {IProjectData} from "../interfaces/ProjectInterfaces";
 
 const visiApp: IProjectData = {
     projectName: "VisiApp - Digital Business Card",
-    "links": [
+    pathname: 'visiapp',
+    links: [
         {
             "title": "Google Play",
             "link": "https://play.google.com/store/apps/developer?id=International+Performance+Ltd."
         }
     ],
     featureImage: "./images/projects/visiApp/feature-photo.jpg",
-    "screenShots": [
-        "/images/projects/visiApp/1.png",
-        "/images/projects/visiApp/2.png",
-        "/images/projects/visiApp/3.png",
-        "/images/projects/visiApp/4.png",
-        "/images/projects/visiApp/5.png",
-        "/images/projects/visiApp/6.png"
-    ],
+
     en: {
         projectSummary: "A mobile application that serves as a digital business card for users of a cryptocurrency platform",
         projectDescription: [

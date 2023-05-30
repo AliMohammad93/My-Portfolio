@@ -5,7 +5,7 @@ import ActivityIndicator from '../../components/ActivityIndicator';
 import EmailSentSuccessfully from './partials/EmailSentSuccessfully';
 import ContactForm from "./partials/ContactForm";
 import sendEmail from './utils/emailUtils';
-import {LanguageContext} from '../Home';
+import {LanguageContext} from "../../context/languageContext";
 import strings from '../../localization/languages';
 import {IFormValues} from './interfaces/EmailUtilsInterfaces';
 
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
             });
             setIsLoading(false);
         } catch (e) {
-            toast.error(strings.contact.error, {
+            toast.error(strings.errorMessage, {
                 position: 'top-center',
                 autoClose: 2000,
                 closeOnClick: true,
@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
     }
 
     return (
-        <section className="flex justify-center items-center h-full text-white p-6">
+        <div className="flex justify-center items-center h-full text-white p-6">
             {isSuccessfullySent ? (
                 <EmailSentSuccessfully username={formValues.name}/>
             ) : (
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
                     handelSendEmail={handelSendEmail}
                 />
             )}
-        </section>
+        </div>
     );
 }
 
