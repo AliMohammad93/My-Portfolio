@@ -1,7 +1,9 @@
-import {IProjectData} from "../interfaces/projectDataInterface";
+import {IProjectData} from "../interfaces/ProjectInterfaces";
 
 const spotdemBackend: IProjectData = {
     projectName: "Mobile App Backend Control Panel",
+    pathname:'spotdem-backend',
+
     featureImage: "./images/projects/spotdem-backend/feature-photo.png",
     en: {
         projectSummary: "The Mobile App Control Panel Website is a dashboard for the admin of a mobile app to view statistics of the app, manage user activity, and accept or reject user and car verifications.",

@@ -1,7 +1,9 @@
-import {IProjectData} from "../interfaces/projectDataInterface";
+import {IProjectData} from "../interfaces/ProjectInterfaces";
 
 const artPlatform: IProjectData = {
     projectName: "Art Platform (Ongoing)",
+    pathname:'art-platform',
+
     en: {
         projectSummary: "Currently developing an art platform with 5 sections (community, gallery, academy, events, and services) allowing users to connect, share, and learn about different art forms.",
         projectDescription: [

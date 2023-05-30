@@ -1,7 +1,9 @@
-import {IProjectData} from "../interfaces/projectDataInterface";
+import {IProjectData} from "../interfaces/ProjectInterfaces";
 
 const personalWebsite: IProjectData = {
     projectName: "My Personal Website",
+    pathname:'personal-website',
+
     "en": {
         projectSummary: "As a fullstack Javascript developer, I have created a personal website to showcase my skills and projects",
         projectDescription: [

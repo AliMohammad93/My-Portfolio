@@ -1,23 +1,20 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, {useState, useEffect, createContext, useContext} from 'react';
 import {SiStackoverflow, SiGithub, SiLinkedin} from "react-icons/si";
 import strings from "../localization/languages";
-import spotdemData from "./projects/data/spotdem";
 import About from "./about/About";
 import Skills from "./skills/Skills";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 import {useCookies} from 'react-cookie';
-
-export const LanguageContext = createContext('en');
-
+import {LanguageContext} from "../context/languageContext";
 type Language = "en" | "de";
-
 const Home: React.FC = () => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [pagePartial, setPagePartial] = useState(<About/>);
     const [activeLink, setActiveLink] = useState<string>('About');
     const [cookies, setCookie] = useCookies(['preferredLanguage']);
-    const [lan, setLan] = useState<Language>('en');
+
+    const { language , setLanguage } = useContext(LanguageContext);
 
     const handleSetHomeScreen = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -28,11 +25,12 @@ const Home: React.FC = () => {
     const changeLanguage = (e: React.MouseEvent, language: Language) => {
         e.preventDefault();
         strings.setLanguage(language);
-        setLan(language);
+        setLanguage(language);
         setCookie('preferredLanguage', language, {expires: new Date((+new Date) + 2678400000)});
     }
 
     const handleSetPartial = (e: React.MouseEvent, PartialName: string) => {
+
         e.preventDefault();
         setActiveLink(PartialName);
         switch (PartialName) {
@@ -61,7 +59,7 @@ const Home: React.FC = () => {
 
     useEffect(() => {
         if (cookies?.preferredLanguage) {
-            setLan(cookies?.preferredLanguage);
+            setLanguage(cookies?.preferredLanguage);
             strings.setLanguage(cookies?.preferredLanguage)
         }
     }, []);
@@ -120,9 +118,7 @@ const Home: React.FC = () => {
 
             {/* Partials section */}
             <div className="flex-auto bg-navy basis-full md:basis-1/2 text-center scrollbar-hide overflow-y-auto">
-                <LanguageContext.Provider value={lan}>
                     {pagePartial}
-                </LanguageContext.Provider>
             </div>
 
 
@@ -141,10 +137,10 @@ const Home: React.FC = () => {
                 </div>
                 <div className='flex flex-col space-y-4'>
                     <a href='#'
-                       className={`hover:text-primary hover:text-primary text-sm  ${lan === 'en' ? 'text-primary' : 'text-grey'}`}
+                       className={`hover:text-primary hover:text-primary text-sm  ${language === 'en' ? 'text-primary' : 'text-grey'}`}
                        onClick={(e) => changeLanguage(e, 'en')}>EN</a>
                     <a href='#'
-                       className={`hover:text-primary  hover:text-primary text-sm  ${lan === 'de' ? 'text-primary' : 'text-grey'}`}
+                       className={`hover:text-primary  hover:text-primary text-sm  ${language === 'de' ? 'text-primary' : 'text-grey'}`}
                        onClick={(e) => changeLanguage(e, 'de')}>DE</a>
                 </div>
             </div>

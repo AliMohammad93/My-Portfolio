@@ -1,7 +1,8 @@
-import {IProjectData} from "../interfaces/projectDataInterface";
+import {IProjectData} from "../interfaces/ProjectInterfaces";
 
 const spotdemData: IProjectData = {
     projectName: "Spotdem Mobile App",
+    pathname:'spotdem',
     featureImage: "./images/projects/spotdem/feature-photo.png",
     links: [
         {
@@ -13,14 +14,7 @@ const spotdemData: IProjectData = {
             link: "https://apps.apple.com/lu/app/spotdem/id1635360948?platform=iphone"
         }
     ],
-    screenShots: [
-        "/images/projects/spotdem/1.png",
-        "/images/projects/spotdem/2.png",
-        "/images/projects/spotdem/3.png",
-        "/images/projects/spotdem/4.png",
-        "/images/projects/spotdem/5.png",
-        "/images/projects/spotdem/6.png"
-    ],
+
     en: {
         projectSummary: "Developed and published Spotdem, a cross-platform mobile app that allows users to connect based on their car plates, with features such as user authentication, search functionality, chat, notification, and premium subscription model.",
         projectDescription: [
