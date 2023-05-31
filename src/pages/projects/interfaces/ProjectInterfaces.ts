@@ -20,8 +20,8 @@ export interface IProjectData {
     projectName: string,
     featureImage?: string,
     pathname:string,
-    en: ProjectTranslatedData
-    de: ProjectTranslatedData ,
+    en: ProjectTranslatedData,
+    de: ProjectTranslatedData,
     links?: {
         title: string,
         link: string

@@ -1,5 +1,5 @@
 import LocalizedStrings from 'react-localization';
-import ILocalizedStrings from "./languagesInterface";
+import ILocalizedStrings from "./LocalizationInterfaces";
 
 const strings: ILocalizedStrings = new LocalizedStrings({
     en: {
