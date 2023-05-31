@@ -2,8 +2,13 @@ import {IProjectData} from "../interfaces/ProjectInterfaces";
 
 const personalWebsite: IProjectData = {
     projectName: "My Personal Website",
-    pathname:'personal-website',
-
+    pathname: 'personal-website',
+    links: [
+        {
+            title: 'GitHub',
+            link: 'https://github.com/AliMohammad93/My-personal-website'
+        }
+    ],
     "en": {
         projectSummary: "As a fullstack Javascript developer, I have created a personal website to showcase my skills and projects",
         projectDescription: [

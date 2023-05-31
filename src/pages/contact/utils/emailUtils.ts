@@ -1,5 +1,5 @@
 import emailJs from "@emailjs/browser";
-import {IFormValues} from "../interfaces/EmailUtilsInterfaces";
+import {IFormValues} from "../interfaces/ContactInterfaces";
 
 const sendEmail = async (formValue: IFormValues) => {
     try {

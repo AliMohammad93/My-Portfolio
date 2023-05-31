@@ -1,11 +1,7 @@
 import React from 'react';
-interface ButtonProps {
-    onClick: () => void;
-    label: string;
-    icon?: React.ReactNode;
-}
+import {IButtonProps} from "./interfaces/ComponentsInterfaces";
 
-const Button: React.FC<ButtonProps> = ({ onClick, label, icon }) => {
+const Button: React.FC<IButtonProps> = ({ onClick, label, icon }) => {
     return (
         <button
             type="button"

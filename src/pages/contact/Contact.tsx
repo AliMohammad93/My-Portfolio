@@ -2,12 +2,12 @@ import React, {useEffect, useState, useContext} from 'react';
 import {useCookies} from 'react-cookie';
 import {toast} from 'react-toastify';
 import ActivityIndicator from '../../components/ActivityIndicator';
-import EmailSentSuccessfully from './partials/EmailSentSuccessfully';
 import ContactForm from "./partials/ContactForm";
+import EmailSentSuccessfully from './partials/EmailSentSuccessfully';
 import sendEmail from './utils/emailUtils';
 import {LanguageContext} from "../../context/languageContext";
 import strings from '../../localization/languages';
-import {IFormValues} from './interfaces/EmailUtilsInterfaces';
+import {IFormValues} from "./interfaces/ContactInterfaces";
 
 const Contact: React.FC = () => {
     useContext(LanguageContext);

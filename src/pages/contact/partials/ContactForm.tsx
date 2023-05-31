@@ -1,7 +1,7 @@
 import React from 'react';
 import Anime from 'react-anime';
 import strings from "../../../localization/languages";
-import {IContactFormInterfaces} from "../interfaces/ContactFormInterfaces";
+import {IContactFormInterfaces} from "../interfaces/ContactInterfaces";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 

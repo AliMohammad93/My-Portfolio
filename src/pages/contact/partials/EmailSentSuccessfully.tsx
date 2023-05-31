@@ -1,7 +1,7 @@
 import React from 'react';
 import strings from "../../../localization/languages";
-
-const EmailSentSuccessfully: React.FC<{ username: string }> = ({username}) => {
+import {IEmailSentSuccessfullyProps} from "../interfaces/ContactInterfaces";
+const EmailSentSuccessfully: React.FC<IEmailSentSuccessfullyProps> = ({username}) => {
     return (
         <div>
             <h2 className="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white text-primary">{strings.contact.thankfulness + ' ' + username}</h2>
