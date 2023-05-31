@@ -1,5 +1,4 @@
 import React from 'react';
-
 const ActivityIndicator: React.FC = () => {
     return (
         <div className={'flex justify-center items-center w-full h-full'}>
@@ -19,5 +18,4 @@ const ActivityIndicator: React.FC = () => {
         </div>
     );
 }
-
 export default ActivityIndicator;

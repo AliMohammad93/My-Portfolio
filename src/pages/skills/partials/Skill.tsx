@@ -5,7 +5,7 @@ import {ISkillProps} from "../interfaces/SkillInterface";
 const Skill: React.FC<ISkillProps> = ({title, logo, experience, including}) => {
     return (
         <div
-            className="p-4 max-w-sm rounded-lg bg-darkNavy shadow-md text-white flex flex-col items-center mt-6 w-11/12 md:w-5/12">
+            className="p-4 rounded-lg bg-darkNavy shadow-md text-white flex flex-col items-center mt-6 w-11/12 lg:w-5/12 md:w-5/6 max-w-sm ">
             <Anime opacity={[0, 1]} delay={(e: number, i: number) => i * 100} easing={'easeInQuad'}>
                 <h1 className="mb-2 text-xl md:text-2xl">{title}</h1>
                 {logo}
