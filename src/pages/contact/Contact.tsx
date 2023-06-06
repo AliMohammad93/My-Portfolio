@@ -5,13 +5,13 @@ import ActivityIndicator from '../../components/ActivityIndicator';
 import ContactForm from "./partials/ContactForm";
 import EmailSentSuccessfully from './partials/EmailSentSuccessfully';
 import sendEmail from './utils/emailUtils';
-import {LanguageContext} from "../../context/languageContext";
+import {LanguageContext} from "../../context/LanguageContext";
 import strings from '../../localization/languages';
 import {IFormValues} from "./interfaces/ContactInterfaces";
 
 const Contact: React.FC = () => {
     useContext(LanguageContext);
-    const [cookies, setCookie] = useCookies<string>(['username']);
+    const [cookies, setCookie] = useCookies<string>(['emailWasSent']);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isSuccessfullySent, setIsSuccessfullySent] = useState<boolean>(false);
     const [formValues, setFormValues] = useState<IFormValues>({
@@ -26,8 +26,8 @@ const Contact: React.FC = () => {
             e.preventDefault();
             await sendEmail(formValues);
             setIsSuccessfullySent(true);
-            setCookie('username', formValues.name, {
-                expires: new Date(+new Date() + 2678400000)
+            setCookie('emailWasSent', true, {
+                expires: new Date(+new Date() + 2678400000) // approximately 31 days.
             });
             setIsLoading(false);
         } catch (e) {
@@ -44,12 +44,8 @@ const Contact: React.FC = () => {
     };
 
     useEffect(() => {
-        if (cookies?.username) {
+        if (cookies?.emailWasSent) {
             setIsSuccessfullySent(true);
-            setFormValues((prevData) => ({
-                ...prevData,
-                name: cookies.username
-            }));
         }
         setIsLoading(false);
     }, []);
@@ -61,7 +57,7 @@ const Contact: React.FC = () => {
     return (
         <div className="flex justify-center items-center h-full text-white p-6">
             {isSuccessfullySent ? (
-                <EmailSentSuccessfully username={formValues.name}/>
+                <EmailSentSuccessfully/>
             ) : (
                 <ContactForm
                     formValues={formValues}

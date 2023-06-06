@@ -9,8 +9,7 @@ const Skill: React.FC<ISkillProps> = ({title, logo, experience, including}) => {
             <Anime opacity={[0, 1]} delay={(e: number, i: number) => i * 100} easing={'easeInQuad'}>
                 <h1 className="mb-2 text-xl md:text-2xl">{title}</h1>
                 {logo}
-                <span
-                    className="text-white border border-[#445059] rounded text-xs px-2 py-1.5 text-center inline-flex items-center mb-4">{experience}</span>
+                <span className="text-white border border-[#445059] rounded text-xs px-2 py-1.5 text-center inline-flex items-center mb-4">{experience}</span>
                 {including ? (
                     <div className="text-center">
                         <h5 className="text-sm md:text-md text-white">{strings.skills.including}</h5>
@@ -18,7 +17,8 @@ const Skill: React.FC<ISkillProps> = ({title, logo, experience, including}) => {
                             <span
                                 className="text-grey border border-[#445059] rounded text-xs md:text-sm px-2 py-1.5 text-center inline-flex items-center m-2"
                                 key={tool}>
-                {tool}</span>))}
+                                     {tool}
+                            </span>))}
                     </div>
                 ) : null}
             </Anime>

@@ -4,7 +4,7 @@ import {SiStackoverflow, SiGithub, SiLinkedin} from 'react-icons/si';
 import { FaFilePdf } from 'react-icons/fa';
 import CustomButton from "../../components/CustomButton";
 import strings from '../../localization/languages';
-import {LanguageContext} from "../../context/languageContext";
+import {LanguageContext} from "../../context/LanguageContext";
 const About: React.FC = () => {
     useContext(LanguageContext);
     const openResume = (): void => {

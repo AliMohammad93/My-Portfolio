@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import Anime from 'react-anime';
 import strings from "../../../localization/languages";
-import {LanguageContext} from "../../../context/languageContext";
+import {LanguageContext} from "../../../context/LanguageContext";
 import CustomButton from "../../../components/CustomButton";
 import {ProjectProps} from "../interfaces/ProjectInterfaces";
 

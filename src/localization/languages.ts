@@ -26,7 +26,6 @@ const strings: ILocalizedStrings = new LocalizedStrings({
             send: 'Send',
             thankfulness: 'Thank you!',
             replyText: 'I appreciate your message and will provide a prompt response as soon as possible.',
-
         },
         skills: {
             expert: 'Expert',

@@ -11,7 +11,5 @@ export interface IContactFormInterfaces {
     setFormValues:   React.Dispatch<React.SetStateAction<IFormValues>>
 }
 
-export interface IEmailSentSuccessfullyProps {
-    username: string
-}
+
 

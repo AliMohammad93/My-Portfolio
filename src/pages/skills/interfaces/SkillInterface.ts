@@ -8,7 +8,7 @@ export interface ISkillProps {
 }
 
 export interface ISkillData {
-    title: string | null;
+    title ? : string;
     content: ISkillProps[];
 }
 
