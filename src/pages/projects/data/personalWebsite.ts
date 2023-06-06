@@ -10,11 +10,10 @@ const personalWebsite: IProjectData = {
         }
     ],
     "en": {
-        projectSummary: "As a fullstack Javascript developer, I have created a personal website to showcase my skills and projects",
+        projectSummary: "I have created a personal website and published it on GitHub to showcase my skills and projects.",
         projectDescription: [
-            "The website is a Single-page application developed using React and styled using Tailwind CSS",
-            "It features a contact form to connect with me and includes links to my social media profiles, such as GitHub, and LinkedIn.",
-            "Through this project, I have demonstrated my expertise in web development and utilized my skills in front-end technologies."
+            "The website is a Single-page application developed using React and Typescript and styled using Tailwind CSS",
+            "It features a contact form, an overview of my projects and skills, and includes links to my social media profiles, such as GitHub and LinkedIn.",
         ],
         responsibility: null,
         technology: {
@@ -29,11 +28,10 @@ const personalWebsite: IProjectData = {
         achievement: null
     },
     de: {
-        projectSummary: "Als Fullstack-JavaScript-Entwickler habe ich eine persönliche Website erstellt, um meine Fähigkeiten und Projekte zu präsentieren",
+        projectSummary: "Ich habe eine persönliche Website erstellt und sie auf GitHub veröffentlicht, um meine Fähigkeiten und Projekte zu präsentieren.",
         projectDescription: [
-            "Die Website ist eine Single-Page-Anwendung, die mit React entwickelt wurde und mit Tailwind CSS gestaltet wurde",
-            "Sie verfügt über ein Kontaktformular, um mit mir in Kontakt zu treten, und enthält Links zu meinen Social-Media-Profilen wie GitHub, und LinkedIn.",
-            "Durch dieses Projekt habe ich meine Expertise in der Webentwicklung demonstriert und meine Fähigkeiten in Front-End Technologien genutzt."
+            "Die Website ist eine Single-Page-Anwendung, die mit React und Typescript entwickelt wurde und mit Tailwind CSS gestaltet ist.",
+            "Sie enthält ein Kontaktformular, eine Übersicht über meine Projekte und Fähigkeiten sowie Links zu meinen Profilen in den sozialen Medien wie GitHub und LinkedIn.",
         ],
         responsibility: null,
         technology: {

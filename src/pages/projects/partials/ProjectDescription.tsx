@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from "react";
 import Anime from "react-anime";
 import {IoIosArrowBack} from "react-icons/io";
 import strings from "../../../localization/languages";
-import {LanguageContext} from "../../../context/languageContext";
+import {LanguageContext} from "../../../context/LanguageContext";
 import {ProjectDescriptionProps , IProjectData} from "../interfaces/ProjectInterfaces";
 
 const ProjectDescription: React.FC<ProjectDescriptionProps> = ({toggleDisplayProject, projectName}) => {

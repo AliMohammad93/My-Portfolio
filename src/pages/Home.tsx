@@ -7,32 +7,29 @@ import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 import Logo from './../components/Logo'
 import {useCookies} from 'react-cookie';
-import {LanguageContext} from "../context/languageContext";
+import {LanguageContext} from "../context/LanguageContext";
 
 type Language = "en" | "de";
 const Home: React.FC = () => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
-    const [activePage, setActivePage] = useState(<About/>);
+    const [activePage, setActivePage] = useState<React.ReactNode>(<About/>);
     const [activeLink, setActiveLink] = useState<string>('About');
-    const [cookies, setCookie] = useCookies(['preferredLanguage']);
+    const [cookies, setCookie] = useCookies<string>(['preferredLanguage']);
 
     const {language, setLanguage} = useContext(LanguageContext);
 
     const handleSetHomeScreen = (e: React.MouseEvent) => {
-        e.preventDefault();
         setActivePage(<About/>);
         setActiveLink('About');
     }
 
-    const changeLanguage = (e: React.MouseEvent, language: Language) => {
-        e.preventDefault();
+    const changeLanguage = (language: Language) => {
         strings.setLanguage(language);
         setLanguage(language);
-        setCookie('preferredLanguage', language, {expires: new Date((+new Date) + 2678400000)});
+        setCookie('preferredLanguage', language, {expires: new Date((+new Date) + 604800000)}); // approximately 31 days
     }
 
-    const handleSetPartial = (e: React.MouseEvent, PartialName: string) => {
-        e.preventDefault();
+    const handleSetPage = (PartialName: string) => {
         setActiveLink(PartialName);
         switch (PartialName) {
             case 'About':
@@ -53,8 +50,7 @@ const Home: React.FC = () => {
         setOpenMenu(false);
     }
 
-    const toggleOpenHamburgerMenu = (e: React.MouseEvent) => {
-        e.preventDefault();
+    const toggleOpenHamburgerMenu = () => {
         setOpenMenu(openMenu => !openMenu)
     }
 
@@ -67,10 +63,10 @@ const Home: React.FC = () => {
 
     return (
         <div className="flex flex-col md:flex-row h-screen relative">
-            {/* left side */}
+            {/* left section */}
             <div className={'bg-navy md:hidden flex flex-row justify-between p-4 flex-initial'}>
                 <Logo handleSetHomeScreen={handleSetHomeScreen} HiddeOnMobileScreen={false}/>
-                <div className={"z-50 p-2"} onClick={(e) => toggleOpenHamburgerMenu(e)}>
+                <div className={"z-50 p-2"} onClick={toggleOpenHamburgerMenu}>
                     <div id="nav-icon3" className={`${openMenu && "open"} `}>
                         <span/>
                         <span/>
@@ -79,42 +75,41 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div
-                className={`bg-darkNavy absolute ${!openMenu && 'hidden'} md:flex md:relative h-screen w-full md:basis-1/2 grid grid-cols-1 `}>
+            <div className={`bg-darkNavy absolute ${!openMenu && 'hidden'} md:flex md:relative h-screen w-full md:basis-1/2 grid grid-cols-1 `}>
                 <div className='flex flex-col justify-between items-center h-full w-full'>
                     <Logo handleSetHomeScreen={handleSetHomeScreen} HiddeOnMobileScreen={true}/>
                     <div className='flex flex-col flex-auto justify-center items-center space-y-6'>
                         <div className="text-white text-3xl md:text-5xl font-bold">
                             <button
                                 className={`font-normal hover:text-primary hover:ml-2 ${activeLink === 'About' && 'text-primary ml-2'}`}
-                                onClick={(e) => handleSetPartial(e, 'About')}>{strings.home.about}</button>
+                                onClick={(e) => handleSetPage( 'About')}>{strings.home.about}</button>
                         </div>
                         <div className="text-white text-3xl md:text-5xl font-bold">
                             <button
                                 className={`font-normal hover:text-primary  hover:ml-2 ${activeLink === 'Skills' && 'text-primary ml-2'}`}
-                                onClick={(e) => handleSetPartial(e, 'Skills')}>{strings.home.skills}</button>
+                                onClick={(e) => handleSetPage( 'Skills')}>{strings.home.skills}</button>
                         </div>
                         <div className="text-white text-3xl md:text-5xl font-bold">
                             <button
                                 className={`font-normal hover:text-primary hover:ml-2 ${activeLink === 'Projects' && 'text-primary ml-2'}`}
-                                onClick={(e) => handleSetPartial(e, 'Projects')}>{strings.home.projects}</button>
+                                onClick={(e) => handleSetPage( 'Projects')}>{strings.home.projects}</button>
                         </div>
 
                         <div className="text-white text-3xl md:text-5xl font-bold">
                             <button
                                 className={`font-normal hover:text-primary  hover:ml-2 ${activeLink === 'Contact' && 'text-primary ml-2'}`}
-                                onClick={(e) => handleSetPartial(e, 'Contact')}>{strings.home.contact}</button>
+                                onClick={(e) => handleSetPage('Contact')}>{strings.home.contact}</button>
                         </div>
                     </div>
                     <div
                         className={"md:hidden text-center space-x-3 py-4 w-full border-t border-t-[#94a1ab]/[.30]"}>
                         <button
                             className={`text-sm ${language === 'en' ? 'text-primary' : 'text-grey'}`}
-                            onClick={(e) => changeLanguage(e, 'en')}>EN
+                            onClick={(e) => changeLanguage( 'en')}>EN
                         </button>
                         <button
                             className={`text-sm  ${language === 'de' ? 'text-primary' : 'text-grey'}`}
-                            onClick={(e) => changeLanguage(e, 'de')}>DE
+                            onClick={(e) => changeLanguage( 'de')}>DE
                         </button>
                     </div>
                 </div>
@@ -126,7 +121,7 @@ const Home: React.FC = () => {
             </div>
 
 
-            {/*  right side   */}
+            {/*  right section   */}
             <div
                 className="bg-darkNavy hidden md:block md:basis-1/12 md:flex flex-col justify-between items-center py-8">
                 <div className={'flex flex-col flex-grow justify-center space-y-6'}>
@@ -143,11 +138,11 @@ const Home: React.FC = () => {
                 <div className='flex flex-col space-y-4'>
                     <button
                         className={`hover:text-primary text-sm  ${language === 'en' ? 'text-primary' : 'text-grey'}`}
-                        onClick={(e) => changeLanguage(e, 'en')}>EN
+                        onClick={(e) => changeLanguage('en')}>EN
                     </button>
                     <button
                         className={`hover:text-primary text-sm  ${language === 'de' ? 'text-primary' : 'text-grey'}`}
-                        onClick={(e) => changeLanguage(e, 'de')}>DE
+                        onClick={(e) => changeLanguage( 'de')}>DE
                     </button>
                 </div>
             </div>
