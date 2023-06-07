@@ -1,4 +1,4 @@
- ## My Personal Portfolio Website
+ ## Portfolio Website
 
 This public repository contains the source code for my personal portfolio website, which serves as a single-page application built using React and Typescript. The website is styled using Tailwind CSS, providing a modern and responsive design.
 
