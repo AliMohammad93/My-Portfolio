@@ -1,6 +1,5 @@
 export default interface ILocalizedStrings {
     whoIAm: string;
-    resume: string;
     errorMessage:string,
     home: {
         about: string;
@@ -22,7 +21,6 @@ export default interface ILocalizedStrings {
         send: string;
         thankfulness: string;
         replyText: string;
-
     };
     skills: {
         expert: string;
