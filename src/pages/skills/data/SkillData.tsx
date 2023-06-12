@@ -1,6 +1,16 @@
-import {SiJavascript, SiReact, SiApachecordova, SiCss3, SiFirebase, SiMongodb, SiLaravel} from "react-icons/si";
+import {
+    SiJavascript,
+    SiReact,
+    SiApachecordova,
+    SiCss3,
+    SiFirebase,
+    SiMongodb,
+    SiLaravel,
+    SiTypescript
+} from "react-icons/si";
 import {FaDatabase, FaNodeJs} from "react-icons/fa";
 import {ISkillData} from "../interfaces/SkillInterface";
+
 export const skills: ISkillData[] = [
     {
         content: [
@@ -8,9 +18,15 @@ export const skills: ISkillData[] = [
                 title: "JavaScript",
                 logo: <SiJavascript className={'text-5xl md:text-6xl bg-[#353231] text-[#f0dc4e] mb-4 rounded'}/>,
                 experience: 'expert',
-                including: ['TypeScript','Redux']
+                including: ['Redux']
             },
+            {
+                title: "Typescript",
+                logo: <SiTypescript className={'text-5xl md:text-6xl bg-[#fff] text-[#2f74c0] mb-4 rounded'}/>,
+                experience: 'expert',
+            }
         ]
+
     },
     {
         title: 'mobileApp',
@@ -36,7 +52,7 @@ export const skills: ISkillData[] = [
                 title: "React",
                 logo: <SiReact className={'text-5xl md:text-6xl  text-[#5ed3f3] mb-4 rounded'}/>,
                 experience: 'expert',
-                including: ['Hooks', 'Class Component']
+                including: ['Hooks', 'Class Component','Material UI']
             },
             {
                 title: "CSS",
@@ -54,11 +70,6 @@ export const skills: ISkillData[] = [
                 logo: <FaNodeJs className={'text-5xl md:text-6xl text-[#63b246] mb-4 rounded'}/>,
                 experience: 'advanced',
                 including: ['Express.js']
-            },
-            {
-                title: "Laravel",
-                logo: <SiLaravel className={'text-5xl md:text-6xl text-[#e83a2d] mb-4 rounded'}/>,
-                experience: 'intermediate',
             },
         ]
     },

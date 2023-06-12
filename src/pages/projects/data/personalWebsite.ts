@@ -6,7 +6,7 @@ const personalWebsite: IProjectData = {
     links: [
         {
             title: 'GitHub',
-            link: 'https://github.com/AliMohammad93/My-personal-website'
+            link: 'https://github.com/AliMohammad93/My-Portfolio'
         }
     ],
     "en": {

@@ -4,7 +4,6 @@ import ILocalizedStrings from "./LocalizationInterfaces";
 const strings: ILocalizedStrings = new LocalizedStrings({
     en: {
         whoIAm: 'I am a passionate Full Stack JavaScript Developer with experience in building mobile and web applications using a range of powerful JavaScript libraries and frameworks, including React, React Native, Node.js, and SQL and NoSQL databases.',
-        resume: 'See my resume',
         errorMessage:'Something went wrong please try again',
         home: {
             about: "About",
@@ -41,7 +40,6 @@ const strings: ILocalizedStrings = new LocalizedStrings({
     },
     de: {
         whoIAm: 'Ich bin ein leidenschaftlicher Full-Stack-JavaScript-Entwickler mit Erfahrung in der Entwicklung von mobilen und Webanwendungen mit einer Reihe leistungsstarker JavaScript-Bibliotheken und -Frameworks, darunter React, React Native, Node.js und SQL- und NoSQL-Datenbanken.',
-        resume: 'Siehe Lebenslauf',
         errorMessage:'Etwas ist schief gelaufen. Bitte versuche es erneut',
         home: {
             about: "Über mich",

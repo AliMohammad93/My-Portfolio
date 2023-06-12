@@ -7,9 +7,7 @@ import strings from '../../localization/languages';
 import {LanguageContext} from "../../context/LanguageContext";
 const About: React.FC = () => {
     useContext(LanguageContext);
-    const openResume = (): void => {
-        window.open('/Ali-Mohammad-CV.pdf', '_blank');
-    };
+
     return (
         <div className="flex justify-center items-center w-full h-full">
             <Anime opacity={[0, 1]} delay={(e: number, i: number) => i * 500} easing="easeInQuad">
@@ -36,7 +34,7 @@ const About: React.FC = () => {
                             </a>
                         </div>
                     </div>
-                    <CustomButton onClick={openResume} label={strings.resume} icon={<FaFilePdf className="mr-2 text-md" />}/>
+
                 </div>
             </Anime>
         </div>
